@@ -43,10 +43,13 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class mymodule(
-  Boolean $permit_root_login = $::mymodule::params::permit_root_login,
-  String $package_name       = $::mymodule::params::package_name,
-  String $service_name       = $::mymodule::params::service_name,
-) inherits ::mymodule::params {
+  Boolean $permit_root_login = false,
+  String $package_name,
+  String $service_name,
+  String $service_ensure,
+  String $ensure,
+  Boolean $service_enable,
+) {
   class { '::mymodule::install': } ->
   class { '::mymodule::config': } ~>
   class { '::mymodule::service': }
