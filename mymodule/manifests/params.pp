@@ -1,4 +1,7 @@
 class mymodule::params { 
+
+  $permit_root_login = false
+
   case $facts['os']['family'] {
     'Debian': {
        $package_name = 'openssh-server'
